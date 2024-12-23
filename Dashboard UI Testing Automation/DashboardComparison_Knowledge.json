@@ -1,0 +1,550 @@
+{
+    "prompt":{
+        "system":"You are an expert on data visualization and dashboards, In this image a data visualization graph is given Instructions Steps that llm must get the specified data in the provided output schema, return only the output and nothing else, Ouput should be a parsable dictionary",
+        "restriction":"Do not change source language or spelling",
+        "output type":"Dict"
+    },
+    "default":{
+        "type":"dict",
+        "properties":{
+            "title":{
+                "type":"str",
+                "description":"Title for the dashboards"
+            },
+            "subtitle":{
+                "type":"str",
+                "description":"Subtitle for the dashboards"
+            },
+            "color-scheme":{
+                "type":"array",
+                "description":"List of the colors used in data visualization"
+            },
+            "legends":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of individual data"
+                    },
+                    "color-scheme":{
+                        "type":"str",
+                        "description":"color against individual label"
+                    }
+                }
+            }
+        }
+    },
+    "Barchart-Horizontal":{
+        "type":"dict",
+        "properties":{
+            "X-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the X axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the numeric values across the X axis"
+                    }
+                }
+            },
+            "Y-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the Y axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of labels across the Y axis"
+                    }
+                }
+            },
+            "Stack":{
+                "type":"str",
+                "description":"Is the Barchart Stacked or Individual put Yes/No"
+            },
+            "data":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"labels along x axis"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value agaisnt the corresponding label along y axis"
+                    }
+
+                }
+            }
+        }
+    },
+    "Barchart-Vertical":{
+        "type":"dict",
+        "properties":{
+            "X-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the X axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the labels across the X axis"
+                    }
+                }
+            },
+            "Y-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the Y axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the numeric values across the Y axis"
+                    }
+                }
+            },
+            "Stack":{
+                "type":"str",
+                "description":"Is the Barchart Stacked or Individual put Yes/No"
+            },
+            "data":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"labels along x axis"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value agaisnt the corresponding label along y axis"
+                    }
+
+                }
+            }
+        }
+    },
+    "Line-Chart":{
+        "type":"dict",
+        "properties":{
+            "line-type":{
+                "type":"str",
+                "description":"type of the line, dotted/normal"
+            }
+        }
+    },
+    "Barchart-Linechart":{
+        "type":"dict",
+        "properties":{
+            "X-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the X axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the numeric values across the X axis"
+                    }
+                }
+            },
+            "Y-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the Y axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of labels across the Y axis"
+                    }
+                }
+            },
+            "Stack":{
+                "type":"str",
+                "description":"Is the Barchart Stacked or Individual put Yes/No"
+            },
+            "data":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"labels along x axis"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value agaisnt the corresponding label along y axis"
+                    }
+
+                }
+            },
+            "line-type":{
+                "type":"str",
+                "description":"type of the line, dotted/normal"
+            }
+        }
+    },
+    "Columnchart-Linechart":{
+        "type":"dict",
+        "properties":{
+            "X-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the X axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the labels across the X axis"
+                    }
+                }
+            },
+            "Y-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the Y axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the numeric values across the Y axis"
+                    }
+                }
+            },
+            "Stack":{
+                "type":"str",
+                "description":"Is the Barchart Stacked or Individual put Yes/No"
+            },
+            "data":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"labels along x axis"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value agaisnt the corresponding label along y axis"
+                    }
+
+                }
+            },
+            "line-type":{
+                "type":"str",
+                "description":"type of the line, dotted/normal"
+            }
+        }
+    },
+    "Doughnut-Chart":{
+        "type":"dict",
+        "properties":{
+            "segment":{
+                "type":"array",
+                "properties":{
+                    "color-scheme":{
+                        "type":"str",
+                        "description":"color for individual segments"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value against individual color segments"
+                    }
+                }
+            }
+        }
+    },
+    "Funnel-Chart":{
+        "type":"dict",
+        "properties":{
+            "data":{
+                "type":"array",
+                "label":{
+                    "type":"str",
+                    "description":"label of individual data"
+                },
+                "color-scheme":{
+                    "type":"str",
+                    "description":"color against individual field"
+                },
+                "value":{
+                    "type":"str",
+                    "description":"value for the individual data"
+                }
+            }
+        }
+    },
+    "Gauge-Chart":{
+        "type":"dict",
+        "properties":{
+            "data":{
+                "label":{
+                    "type":"str",
+                    "description":"label of the gauge chart"
+                },
+                "min":{
+                    "type":"str",
+                    "description":"lower limit of the gauge"
+                },
+                "max":{
+                    "type":"str",
+                    "description":"Upper limit of the gauge"
+                },
+                "value":{
+                    "type":"str",
+                    "description":"value for the gauge"
+                }
+            }
+            
+        }
+    },
+    "Card-Multirow":{
+        "type":"dict",
+        "properties":{
+            "label":{
+                "type":"str",
+                "description":"label for the card"
+            },
+            "value":{
+                "type":"array",
+                "description":"list of values of the card"
+            }
+        }
+    },
+    "Card-SingleNumber":{
+        "type":"dict",
+        "properties":{
+            "label":{
+                "type":"str",
+                "description":"label for the card"
+            },
+            "value":{
+                "type":"str",
+                "description":"value of the card"
+            }
+        }
+    },
+    "Heat-Map":{
+        "type":"dict",
+        "properties":{
+        "data":{
+            "type":"list",
+            "properties":{
+                "label":{
+                    "type":"str",
+                    "description":"label of individual data"
+                },
+                "color-scheme":{
+                    "type":"str",
+                    "description":"color against individual label"
+                },
+                "value":{
+                    "type":"str",
+                    "description":"value against individual label"
+                }
+            }
+        }
+    }   
+    },
+    "Point-Map":{
+        "type":"dict",
+        "properties":{
+            "data":{
+                "type":"list",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of individual data"
+                    },
+                    "color-scheme":{
+                        "type":"str",
+                        "description":"color against individual label"
+                    }
+                }
+            }
+        }
+    },
+    "Matrix":{
+        "type":"dict",
+        "properties":{
+            "data":{
+                "type":"array",
+                "properties":{
+                    "row":{
+                        "type":"str",
+                        "description":"row of the matrix"
+                        },
+                    "column":{
+                        "type":"str",
+                        "description":"column of the matrix"
+                        },
+                    "value":{
+                            "type":"str",
+                            "description":"values against respective row and column"
+                        }
+                    }
+                }
+            }
+        },
+    "Pie-Chart":{
+        "type":"dict",
+        "properties":{
+            "segment":{
+                "type":"array",
+                "properties":{
+                    "color-scheme":{
+                        "type":"str",
+                        "description":"color against individual segment"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value against individual color segments"
+                    }
+                }
+            }
+        }
+    },
+    "Scatter":{
+        "type":"dict",
+        "properties":{
+            "X-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the X axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the labels across the X axis"
+                    }
+                }
+            },
+            "Y-axis":{
+                "type":"dict",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of the Y axis"
+                    },
+                    "range":{
+                        "type":"array",
+                        "description":"list of the numeric values across the Y axis"
+                    }
+                }
+            },
+            "line":{
+                "type":"str",
+                "description":"if any line is present or not yes/no"
+            }
+        }
+    },
+    "Slicer":{
+        "type":"dict",
+        "properties":{
+            "chart-type":{
+                "type":"str",
+                "description":"type of slicer (Vertical list/Tile/Dropdown)"
+            }
+        }
+
+    },
+    "Table":{
+        "type":"dict",
+        "properties":{
+            "data":{
+                "type":"array",
+                "properties":{
+                    "column":{
+                        "type":"str",
+                        "description":"columns of the table"
+                    },
+                    "row":{
+                        "type":"str",
+                        "description":"rows of the table"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"values against respective row and column"
+                    }
+                }
+            }
+        }
+    },
+    "Tree-Map":{
+        "type":"dict",
+        "properties":{
+            "segment":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label of individual data"
+                    },
+                    "color-scheme":{
+                        "type":"str",
+                        "description":"color against individual label"
+                    },
+                    "value":{
+                        "type":"str",
+                        "description":"value against individual label"
+                    }
+                },
+            "heirarchy":{
+                "type":"array",
+                "properties":{
+                    "level":{
+                        "type":"str",
+                        "description":"different levels treemap"
+                    },
+                    "label":{
+                        "type":"str",
+                        "description":"label for the respective level"
+                    },
+                    "value":{
+                        "type":"array",
+                        "description":"List of values in the specific level"
+                    }
+                }
+            },
+            "stats":{
+                "type":"array",
+                "properties":{
+                    "label":{
+                        "type":"str",
+                        "description":"label for the respective level"
+                    },
+                    "value":{
+                        "type":"array",
+                        "description":"List of values in the specific level"
+                    }
+                }
+            }
+            }
+        }
+    },
+    "Waterfall-Chart":{
+        "type":"dict",
+        "properties":{
+            "start":{
+                "type":"str",
+                "description":"Starting point of waterfall chart"
+            },
+            "end":{
+                "type":"str",
+                "description":"End point of waterfall chart"
+            }
+        }
+    }
+}
