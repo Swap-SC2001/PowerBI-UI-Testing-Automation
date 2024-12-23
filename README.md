@@ -1,6 +1,7 @@
 PowerBI UI Testing Automation
 -------------------------------
-![image](https://github.com/user-attachments/assets/f9006788-a77f-400f-96ec-362c3dce9d5c)
+
+![image](https://github.com/user-attachments/assets/fb8dd52e-65cb-4f6e-b7af-4f29c7b06f88)
 
 ![image](https://github.com/user-attachments/assets/ba70760f-102c-4ff4-96da-77cdc538edb8)
 ![image](https://github.com/user-attachments/assets/e6cdb80f-0bdf-461f-baa7-7e5f0199ad7a)
